@@ -1,0 +1,63 @@
+# Compiled files
+bin/
+obj/
+out/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.vscode/
+*.vs/
+
+# Logs and debugging
+*.log
+logs/
+**/*.swp
+**/*.swo
+
+# Build artifacts
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ASP.NET temporary files
+.vs/
+temp/
+wwwroot/
+wwwroot/css/
+wwwroot/js/
+wwwroot/lib/
+node_modules/
+
+# Configuration
+appsettings.json
+appsettings.Development.json
+secrets.json
+
+# Database
+*.mdf
+*.ldf
+*.sqlite
+*.db
+
+# Docker
+docker-compose.override.yml
+.env
+
+# JetBrains Rider
+.idea/
+*.iml
+
+# NPM / Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
