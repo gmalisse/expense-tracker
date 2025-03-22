@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace ExpenseTracker.Models
 {
@@ -14,7 +15,11 @@ namespace ExpenseTracker.Models
         [MaxLength(100)]
         public string? Description { get; set; }
         public int CategoryTypeId { get; set; }
-        public CategoryType CategoryType { get; set; }
+
+        [JsonIgnore]
+        public CategoryType? CategoryType { get; set; }
+
+        [JsonIgnore]
         public ICollection<Transaction> Transactions { get; set; }
 
         public Category()

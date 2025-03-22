@@ -27,7 +27,7 @@ namespace ExpenseTracker.Controllers
             }
             catch(Exception)
             {
-                return NotFound("There are no categories.");
+                return NotFound("There are no category types.");
             }
             
         }
@@ -43,7 +43,7 @@ namespace ExpenseTracker.Controllers
             }
             catch (Exception)
             {
-                return NotFound("Category not found.");
+                return NotFound("Category type not found.");
             }
         }
     }
