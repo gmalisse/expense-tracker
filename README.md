@@ -9,18 +9,18 @@ This project was developed to practice back-end API design, database modeling, a
 
 ## 🚀 Features
 
-- ✅ Create new expenses
-- 🔍 Retrieve expense records
-- ✏️ Update and delete entries
-- 💾 Persistence with a relational database (PostgreSQL)
-- 🧾 API-ready for front-end or mobile integration
+- Create new expenses
+- Retrieve expense records
+- Update and delete entries
+- Persistence with a relational database (PostgreSQL)
+- API-ready for front-end or mobile integration
 
 ---
 
 ## ⏳ To be implemented
 
-- 📅 Filter transactions by date or category
-- 🔐 JWT authentication 
+- Async CRUD operations
+- User Entity and JWT authentication
 
 ---
 
@@ -62,8 +62,6 @@ dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL
 }
 ```
 
-docker
-
 ### 4. Apply existing migrations and populate the database
 
 Run the command below to create the database using the migrations:
@@ -72,4 +70,22 @@ Run the command below to create the database using the migrations:
 dotnet ef database update
 ```
 
-![DER](ExpenseTracker/images/DER_18.03.2025.png)
+## 🛠️ Development Process
+
+1. Project Setup
+Created the solution using the ASP.NET Core Web API template, establishing a clean architecture for future scalability.
+
+2. Domain Modeling
+Defined the core entities Category, CategoryType and Transaction. Created the properties and data annotations for each one of them, and defined the relationship between entities.
+
+3. Database Integration
+Configured Entity Framework Core with PostgreSQL for relational data persistence.
+Handled environment variables and connection strings with appsettings.json and used Docker with a docker-compose file for PostgreSQL containerization.
+
+4. DbContext and Migrations
+Created the DbContext and migrations. Applied them using the dotnet ef CLI, implementing initial data for the API.
+
+5. API Implementation
+Built RESTful endpoints to handle full CRUD operations.
+Tested endpoints manually and documented the behavior with Swagger for easy inspection.
+
