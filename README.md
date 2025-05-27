@@ -19,7 +19,7 @@ This project was developed to practice back-end API design, database modeling, a
 
 ## ⏳ To be implemented
 
-- Async CRUD operations
+- Refactor the code with async CRUD operations and better practices
 - User Entity and JWT authentication
 
 ---
@@ -86,6 +86,6 @@ Handled environment variables and connection strings with appsettings.json and u
 Created the DbContext and migrations. Applied them using the dotnet ef CLI, implementing initial data for the API.
 
 **5. API Implementation:**
-Built RESTful endpoints to handle full CRUD operations.
+Built RESTful endpoints to handle full CRUD operations. CRUD operations were fully implemented for the Transaction and Category entities. The CategoryType entity properties should not be changed, so there is only the Read operation.
 Tested endpoints manually and documented the behavior with Swagger for easy inspection.
 
