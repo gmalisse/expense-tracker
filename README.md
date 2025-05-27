@@ -2,7 +2,7 @@
 
 A RESTful Web API for managing personal expenses, built with **ASP.NET Core**.  
 It allows users to add, update, delete and retrieve financial transactions, making it ideal for integration with front-end apps or mobile clients.
-
+![Entity-Relationship Diagram (ERD)](ExpenseTracker/Images/der.png)
 This project was developed to practice back-end API design, database modeling, and modern .NET practices.
 
 ---
