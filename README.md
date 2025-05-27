@@ -72,20 +72,20 @@ dotnet ef database update
 
 ## 🛠️ Development Process
 
-1. Project Setup
+**1. Project Setup:**
 Created the solution using the ASP.NET Core Web API template, establishing a clean architecture for future scalability.
 
-2. Domain Modeling
+**2. Domain Modeling:**
 Defined the core entities Category, CategoryType and Transaction. Created the properties and data annotations for each one of them, and defined the relationship between entities.
 
-3. Database Integration
+**3. Database Integration:**
 Configured Entity Framework Core with PostgreSQL for relational data persistence.
 Handled environment variables and connection strings with appsettings.json and used Docker with a docker-compose file for PostgreSQL containerization.
 
-4. DbContext and Migrations
+**4. DbContext and Migrations:**
 Created the DbContext and migrations. Applied them using the dotnet ef CLI, implementing initial data for the API.
 
-5. API Implementation
+**5. API Implementation:**
 Built RESTful endpoints to handle full CRUD operations.
 Tested endpoints manually and documented the behavior with Swagger for easy inspection.
 
