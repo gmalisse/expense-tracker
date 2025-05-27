@@ -31,6 +31,21 @@ namespace ExpenseTracker.Controllers
             }
         }
 
+        [HttpGet("{id:int}")]
+        public ActionResult<Transaction> Get(int id)
+        {
+            try
+            {
+                var transaction = _context.Transactions.
+                    SingleOrDefault(c => c.Id == id);
+                return transaction;
+            }
+            catch (Exception)
+            {
+                return NotFound("Transaction not found.");
+            }
+        }
+
         [HttpPost]
         public ActionResult<Transaction> Post(Transaction transaction)
         {
@@ -42,7 +57,43 @@ namespace ExpenseTracker.Controllers
             }
             catch (Exception)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error creating category.");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error creating transaction.");
+            }
+        }
+
+        [HttpPut("{id:int}")]
+        public ActionResult Put(int id, Transaction transaction)
+        {
+            try
+            {
+                if (id != transaction.Id)
+                {
+                    return BadRequest("Id's do not match");
+                }
+                _context.Entry(transaction).State = EntityState.Modified;
+                _context.SaveChanges();
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return BadRequest($"It was not possible to update the transaction of id {id}.");
+            }
+        }
+
+        [HttpDelete]
+        public ActionResult Delete(int id)
+        {
+            try
+            {
+                var transaction = _context.Transactions.
+                    SingleOrDefault(p => p.Id == id);
+                _context.Transactions.Remove(transaction);
+                _context.SaveChanges();
+                return Ok(transaction);
+            }
+            catch (Exception)
+            {
+                return NotFound("Transaction not found.");
             }
         }
     }
